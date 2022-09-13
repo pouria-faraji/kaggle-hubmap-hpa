@@ -21,13 +21,19 @@ There are three main Jupyter notebooks. Notebookes can easily be run in Google C
 
     `pip install segmentation-models`
 
-    For optimizer, *Adam* is used, and for the loss, *Binary Cross-Entropy*. The metric is *Dice Coefficient*. The first 10 epochs the weights of encoders are freezed so they won't change drastically during first epochs of training. Then they are unfreezed for training afterwards.
+    For optimizer, *Adam* is used, and for the loss, *Binary Cross-Entropy*. The score metric is *Dice Coefficient*. The first 10 epochs the weights of encoders are freezed so they won't change drastically during first epochs of training. Then they are unfreezed for training afterwards.
 
 3. **Results**
 
-    The following table shows the results for a simple training of a UNet with EfficientNet as the backbone. 
+    The following tables show the results for a training of a simple U-Net in comparison to the U-Net with Efficientnet as the backbone.
 
-    | Metric          | Train set | Validation Set | Test Set |
-    |-----------------|-----------|----------------|----------|
-    | Loss            | 0.039     | 0.125          | 0.169    |
-    | Dice Coefficient| 0.93      | 0.81           | 0.91     |
+    | Model           | Train Loss | Validation Loss | Test Loss |
+    |-----------------|------------|-----------------|-----------|
+    | Simple U-Net    | 0.088      | 0.095           | 0.115     |
+    | EfficientNet    | 0.039      | 0.125           | 0.169     |
+
+    | Model           | Train Dice | Validation Dice | Test Dice |
+    |-----------------|------------|-----------------|-----------|
+    | Simple U-Net    | 0.85       | 0.86            | 0.86      |
+    | EfficientNet    | 0.93       | 0.81            | 0.91      |
+
