@@ -54,7 +54,7 @@ class DecoderBlock(Model):
         return x
 
 class UNet(Model):
-    def __init__(self, num_classes=2, width=256, height=256):
+    def __init__(self, num_classes=1, width=256, height=256):
         super().__init__()
         self.width = width
         self.height = height
@@ -71,7 +71,7 @@ class UNet(Model):
         self.decoder3 = DecoderBlock(128)
         self.decoder4 = DecoderBlock(64)
 
-        self.conv = layers.Conv2D(filters=num_classes, kernel_size=1, activation=tf.nn.softmax)
+        self.conv = layers.Conv2D(filters=num_classes, kernel_size=1, activation=tf.nn.sigmoid)
     
     def call(self, inputs, training=None):
 
