@@ -7,21 +7,21 @@ There are three main Jupyter notebooks. Notebooks can easily be run in Google Co
 
 1. **Data Preparation** 
 
-    First, image masks are generated using `rle2mask` function. Second, all 351 images will be divided in groups in 3 sub-folders for train, validation, and test sets. Number of images in validation and test folders will be determinned by `TEST_SIZE` .
+    First, image masks are generated using `rle2mask` function. Second, all 351 images will be divided into groups in 3 sub-folders for train, validation, and test sets. The number of images in validation and test folders will be determined by `TEST_SIZE` .
 
-    Third, all images will be splitted into patches of `PATCH_SIZE` , then will be augmented by random rotation and random flip. 
+    Third, all images will be split into patches of `PATCH_SIZE` , then will be augmented by random rotation and random flip. 
 
 2. **Model Training**
     
     Two models have been used, which can be accessed using the corresponding filename. 
     
-    One is simple U-Net with *Encoder* and *Decoder* as it's building blocks. The corresponding file is `UNet.py`
+    One is a simple U-Net with *Encoder* and *Decoder* as its building blocks. The corresponding file is `UNet.py`
 
     The other is a U-Net with *EfficientNet* as the backbone. For using this model, `segmentation-model` library must be installed using the following command:
 
     `pip install segmentation-models`
 
-    For optimizer, *Adam* is used, and for the loss, *Binary Cross-Entropy*. The score metric is *Dice Coefficient*. The first 10 epochs the weights of encoders are freezed so they won't change drastically during first epochs of training. Then they are unfreezed for training afterwards.
+    For the optimizer, *Adam* is used, and for the loss, *Binary Cross-Entropy*. The scoring metric is *Dice Coefficient*. In the first 10 epochs, the weights of encoders are frozen so they won't change drastically during the first epochs of training. Then they are unfrozen for training afterward.
 
 3. **Results**
 
