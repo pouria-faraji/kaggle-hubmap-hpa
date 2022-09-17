@@ -1,9 +1,9 @@
 # HuBMAP + HPA - Hacking the Human Body
 This repository contains source code for an image segmentation Kaggle competition, called [**HuBMAP + HPA - Hacking the Human Body**](https://www.kaggle.com/competitions/hubmap-organ-segmentation)
 
-In this competition we have to identify and segment functional tissue units (FTUs) across five human organs.
+In this competition, we have to identify and segment functional tissue units (FTUs) across five human organs.
 
-There are three main Jupyter notebooks. Notebookes can easily be run in Google Colab. You have to first download your `kaggle.json` API token file from settings. 
+There are three main Jupyter notebooks. Notebooks can easily be run in Google Colab. You have to first download your `kaggle.json` API token file from settings. 
 
 1. **Data Preparation** 
 
